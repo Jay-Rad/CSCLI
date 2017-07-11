@@ -52,7 +52,7 @@ namespace CSCLI
                 HistoryPosition = CommandHistory.Count;
                 if (strInput == "/?")
                 {
-                    textOutput.Text += $"C# CLI Help{Environment.NewLine}---------------------------{Environment.NewLine + Environment.NewLine}Add using statements and references by typing the namespace (and only the namespace) into the respective window and hitting Enter.{Environment.NewLine + Environment.NewLine}Remove usings and references by selecting one or more and hitting Delete.{Environment.NewLine + Environment.NewLine}A new script environment is loaded after modifying usings or references.{Environment.NewLine + Environment.NewLine}Usings and references are retained and stored in %appdata%\\CSCLI\\Settings.json.{Environment.NewLine + Environment.NewLine}Omit the ending \";\" to have a result returned to the output stream and written to the window.{Environment.NewLine + Environment.NewLine}Author: Jared Goodwin (https://translucency.azurewebsites.net){Environment.NewLine + Environment.NewLine}Third Party Library: Fody/Costura (https://github.com/Fody/Costura)";
+                    textOutput.Text += $"C# CLI Help{Environment.NewLine}---------------------------{Environment.NewLine + Environment.NewLine}Add using statements and references by typing the namespace (and only the namespace) into the respective window and hitting Enter.{Environment.NewLine + Environment.NewLine}Remove usings and references by selecting one or more and hitting Delete.{Environment.NewLine + Environment.NewLine}A new script environment is loaded after modifying usings or references.{Environment.NewLine + Environment.NewLine}Usings and references are retained and stored in %appdata%\\CSCLI\\Settings.json.{Environment.NewLine + Environment.NewLine}Omit the ending \";\" to have a result returned to the output stream and written to the window.{Environment.NewLine + Environment.NewLine}The window has a splitter that can be dragged to adjust the height of the top and bottom sections.{Environment.NewLine + Environment.NewLine}Author: Jared Goodwin (https://translucency.azurewebsites.net){Environment.NewLine + Environment.NewLine}Third Party Library: Fody/Costura (https://github.com/Fody/Costura)";
                 }
                 else
                 {
@@ -92,6 +92,11 @@ namespace CSCLI
             var win = new References();
             win.Owner = this;
             win.ShowDialog();
+        }
+
+        private void buttonClear_Click(object sender, RoutedEventArgs e)
+        {
+            textOutput.Text = "";
         }
     }
 }
