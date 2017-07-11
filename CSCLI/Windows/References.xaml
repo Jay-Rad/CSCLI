@@ -1,0 +1,18 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CSCLI.Windows"
+        xmlns:Models="clr-namespace:CSCLI.Models" x:Class="CSCLI.Windows.References"
+        mc:Ignorable="d"
+        Title="References" Height="300" Width="300" WindowStartupLocation="CenterOwner" Background="Black">
+    <Window.DataContext>
+        <Models:Settings/>
+    </Window.DataContext>
+
+    <Grid>
+        <ListBox x:Name="listReferences" Background="Black" Foreground="White" Margin="10,10,10,33" ItemsSource="{Binding References}" SelectionMode="Extended" KeyDown="listReferences_KeyDown"/>
+        <TextBox x:Name="textNewReference" Background="Black" Foreground="White" VerticalAlignment="Bottom" Margin="10,0,10,10" KeyDown="textNewReference_KeyDown"/>
+    </Grid>
+</Window>

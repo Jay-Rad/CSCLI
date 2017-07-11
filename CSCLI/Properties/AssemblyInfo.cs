@@ -7,12 +7,12 @@ using System.Windows;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("CSCLI")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("C# CLI")]
+[assembly: AssemblyDescription("A C# command line interface.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("CSCLI")]
-[assembly: AssemblyCopyright("Copyright ©  2017")]
+[assembly: AssemblyCompany("Translucency")]
+[assembly: AssemblyProduct("C# CLI")]
+[assembly: AssemblyCopyright("Copyright ©  2017 Translucency")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
