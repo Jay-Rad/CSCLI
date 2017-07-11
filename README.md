@@ -13,4 +13,8 @@ Usings and references are retained and stored in %appdata%\\CSCLI\\Settings.json
 
 Omit the ending ";" to have a result returned to the output stream and written to the window.
 
+![C# CLI](https://translucency.azurewebsites.net/Images/Screenshots/CSCLI2.png)
+
+![C# CLI](https://translucency.azurewebsites.net/Images/Screenshots/CSCLI1.png)
+
 Third Party Library: Fody/Costura (https://github.com/Fody/Costura)
