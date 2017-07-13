@@ -53,7 +53,7 @@ namespace CSCLI
                 else
                 {
                     CurrentScript = newScript;
-                    if (LastState.ReturnValue is IEnumerable)
+                    if (LastState.ReturnValue is IEnumerable && LastState.ReturnValue is string == false)
                     {
                         ArrayOutput = "";
                         BuildArrayOutput(LastState.ReturnValue as IEnumerable, 0);
@@ -89,7 +89,7 @@ namespace CSCLI
                     {
                         ArrayOutput += "    ";
                     }
-                    ArrayOutput += value.ToString() + $" [{value.GetType().ToString()}]{Environment.NewLine}";
+                    ArrayOutput += value.ToString() + Environment.NewLine;
                 }
             }
         }
