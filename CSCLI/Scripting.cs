@@ -4,21 +4,25 @@ using Microsoft.CodeAnalysis.Scripting;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Collections.Immutable;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace CSCLI
 {
-    public static class Scripting
+    public class Scripting
     {
-        private static Script CurrentScript { get; set; }
-        private static ScriptState LastState { get; set; }
+        public static Scripting Current { get; } = new Scripting();
+        private Script CurrentScript { get; set; }
+        private ScriptState LastState { get; set; }
+        private string ArrayOutput { get; set; } = "";
 
-        private static string ArrayOutput { get; set; } = "";
-
-        public static void NewScript()
+        public void NewScript()
         {
             var usings = "";
             foreach (var line in Settings.Current.Usings)
@@ -28,7 +32,7 @@ namespace CSCLI
             CurrentScript = CSharpScript.Create(usings, ScriptOptions.Default.AddReferences(Settings.Current.References));
             LastState = null;
         }
-        public static async Task<string> RunScript(string Input)
+        public async Task<string> RunScript(string Input)
         {
             try
             {
@@ -66,7 +70,7 @@ namespace CSCLI
                 return $"Error: {ex.Message}" + Environment.NewLine + Environment.NewLine;
             }
         }
-        private static void BuildArrayOutput(IEnumerable ArrayValue, int Indents)
+        private void BuildArrayOutput(IEnumerable ArrayValue, int Indents)
         {
             for (var i = 0; i < Indents; i++)
             {

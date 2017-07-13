@@ -25,6 +25,11 @@ namespace CSCLI.Windows
             InitializeComponent();
             this.DataContext = Settings.Current;
         }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            textNewReference.Focus();
+        }
         private void textNewReference_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
@@ -38,7 +43,7 @@ namespace CSCLI.Windows
                 Settings.Current.References.Add(strReference);
                 listReferences.Items.Refresh();
                 Settings.Current.Save();
-                Scripting.NewScript();
+                Scripting.Current.NewScript();
             }
             else if (e.Key == Key.Escape)
             {
@@ -56,7 +61,7 @@ namespace CSCLI.Windows
                 }
                 Settings.Current.Save();
                 listReferences.Items.Refresh();
-                Scripting.NewScript();
+                Scripting.Current.NewScript();
             }
         }
     }

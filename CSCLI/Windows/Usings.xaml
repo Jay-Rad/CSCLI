@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:CSCLI.Windows"
         xmlns:Models="clr-namespace:CSCLI.Models" x:Class="CSCLI.Windows.Usings"
         mc:Ignorable="d"
-        Title="C# CLI Usings" Height="300" Width="300" Background="Black" WindowStartupLocation="CenterOwner">
+        Title="C# CLI Usings" Height="300" Width="300" Background="Black" WindowStartupLocation="CenterOwner" Loaded="Window_Loaded">
     <Window.DataContext>
         <Models:Settings/>
     </Window.DataContext>

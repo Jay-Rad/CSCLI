@@ -25,7 +25,10 @@ namespace CSCLI.Windows
             InitializeComponent();
             this.DataContext = Settings.Current;
         }
-
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            textNewUsing.Focus();
+        }
         private void textNewUsing_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
@@ -39,7 +42,7 @@ namespace CSCLI.Windows
                 Settings.Current.Usings.Add(strUsing);
                 listUsings.Items.Refresh();
                 Settings.Current.Save();
-                Scripting.NewScript();
+                Scripting.Current.NewScript();
             }
             else if (e.Key == Key.Escape)
             {
@@ -57,8 +60,10 @@ namespace CSCLI.Windows
                 }
                 Settings.Current.Save();
                 listUsings.Items.Refresh();
-                Scripting.NewScript();
+                Scripting.Current.NewScript();
             }
         }
+
+        
     }
 }
