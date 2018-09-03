@@ -29,8 +29,8 @@ namespace CSCLI
             this.DataContext = Settings.Current;
             Settings.Current.Load();
             Scripting.Current.NewScript();
-            WPF_Auto_Update.Updater.RemoteFileURI = "https://translucency.azurewebsites.net/Downloads/CSCLI.exe";
-            WPF_Auto_Update.Updater.ServiceURI = "https://translucency.azurewebsites.net/Services/VersionCheck.cshtml?Path=/Downloads/CSCLI.exe";
+            WPF_Auto_Update.Updater.RemoteFileURI = "https://lucency.co/Downloads/CSCLI.exe";
+            WPF_Auto_Update.Updater.ServiceURI = "https://lucency.co/Services/VersionCheck.cshtml?Path=/Downloads/CSCLI.exe";
             WPF_Auto_Update.Updater.CheckCommandLineArgs();
         }
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -72,7 +72,7 @@ namespace CSCLI
                 HistoryPosition = CommandHistory.Count;
                 if (strInput == "/?")
                 {
-                    textOutput.Text += $"{Environment.NewLine}---------------------------{Environment.NewLine}C# CLI Help{Environment.NewLine}---------------------------{Environment.NewLine + Environment.NewLine}Add using statements and references by typing the namespace (and only the namespace) into the respective window and hitting Enter.{Environment.NewLine + Environment.NewLine}Remove usings and references by selecting one or more and hitting Delete.{Environment.NewLine + Environment.NewLine}A new script environment is loaded after modifying usings or references.{Environment.NewLine + Environment.NewLine}Usings and references are retained and stored in %appdata%\\CSCLI\\Settings.json.{Environment.NewLine + Environment.NewLine}Omit the ending \";\" to have a result returned to the output stream and written to the window.{Environment.NewLine + Environment.NewLine}The window has a splitter that can be dragged to adjust the height of the top and bottom sections.{Environment.NewLine + Environment.NewLine}For shortcuts, hold Shift + Ctrl and press a button's underlined letter.{Environment.NewLine + Environment.NewLine}Author: Jared Goodwin (https://translucency.azurewebsites.net){Environment.NewLine + Environment.NewLine}Third Party Library: Fody/Costura (https://github.com/Fody/Costura)";
+                    textOutput.Text += $"{Environment.NewLine}---------------------------{Environment.NewLine}C# CLI Help{Environment.NewLine}---------------------------{Environment.NewLine + Environment.NewLine}Add using statements and references by typing the namespace (and only the namespace) into the respective window and hitting Enter.{Environment.NewLine + Environment.NewLine}Remove usings and references by selecting one or more and hitting Delete.{Environment.NewLine + Environment.NewLine}A new script environment is loaded after modifying usings or references.{Environment.NewLine + Environment.NewLine}Usings and references are retained and stored in %appdata%\\CSCLI\\Settings.json.{Environment.NewLine + Environment.NewLine}Omit the ending \";\" to have a result returned to the output stream and written to the window.{Environment.NewLine + Environment.NewLine}The window has a splitter that can be dragged to adjust the height of the top and bottom sections.{Environment.NewLine + Environment.NewLine}For shortcuts, hold Shift + Ctrl and press a button's underlined letter.{Environment.NewLine + Environment.NewLine}Author: Jared Goodwin (https://lucency.co){Environment.NewLine + Environment.NewLine}Third Party Library: Fody/Costura (https://github.com/Fody/Costura)";
                 }
                 else
                 {
